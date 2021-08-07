@@ -1,0 +1,21 @@
+---
+# tasks file for dangli
+- name: Namespace for dangli
+  community.kubernetes.k8s:
+    state: "{{ dangli_state }}"
+    name: "{{ dangli_namespace }}"
+    api_version: v1
+    kind: Namespace
+
+- name: dangli service
+  community.kubernetes.k8s:
+    state: "{{ dangli_state }}"
+    namespace: "{{ dangli_namespace }}"
+    template: "{{ item }}"
+  with_items:
+    - console.yml.j2
+    - core.yml.j2
+    - wxh5.yml.j2
+    - ingress.yml.j2
+  tags:
+    - dangli
