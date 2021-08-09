@@ -14,7 +14,7 @@ mongodb_connection: mongodb://root:it_is_a_secret@mongodb
 console_version: latest
 console_image: "registry.cn-hongkong.aliyuncs.com/36node/dushuli-console:{{ console_version }}"
 console_time: 20210804120000
-console_api_path: https://api.hsyouxue.com/dangli/v0
+console_api_path: https://hsyouxue.com/api/dangli/v0
 console_auth_path: https://stargate.36node.com/api/auth/v0
 console_provider: 5f992c6e79cb9a0011300a42
 console_ns: /dangli
@@ -25,7 +25,7 @@ core_version: latest
 core_image: "registry.cn-hongkong.aliyuncs.com/36node/dushuli-api:{{ core_version }}"
 core_time: 20210804120000
 core_port: "80"
-core_path: /dangli/v0
+core_path: /api/dangli/v0
 core_wechat_official_app_id: wx59ac79a25229b0b8
 core_wechat_official_app_secret: 8b59d935e9e6fbf0227b51f1d018f0f3
 core_wechat_pay_mch_id: "1527752781"
@@ -40,13 +40,13 @@ core_wechat_component_app_secret: c4d8d98e69c69a317caf7388ee6eef29
 core_wechat_component_token: 36node
 core_wechat_component_key: ngtreM9ISILjnOVjIiXPK03IaR0MjLALbuYChbba6Cc
 core_mongodb_connection: "{{ mongodb_connection }}/core?authSource=admin"
-core_health_path: /dangli/v0/health
+core_health_path: /api/dangli/v0/health
 
 wxh5_version: latest
 wxh5_image: "registry.cn-hongkong.aliyuncs.com/36node/dushuli:{{ wxh5_version }}"
 wxh5_time: 20210804120000
 # wxh5_wechat_domain: https://api.dushuli.36node.com # dangli没有
-wxh5_api_path: https://api.hsyouxue.com/dangli/v0
+wxh5_api_path: https://hsyouxue.com/api/dangli/v0
 wxh5_auth_path: https://stargate.36node.com/api/auth/v0
 wxh5_wechat_provider: 5f992c8a79cb9a0011300a43
 wxh5_password_provider: 5f992c6e79cb9a0011300a42

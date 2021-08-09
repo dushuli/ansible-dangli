@@ -8,29 +8,30 @@ metadata:
     cert-manager.io/cluster-issuer: "{{ cert_issuer }}"
 spec:
   rules:
-    - host: www.{{ domain }}
+    - host: "www.{{ domain }}"
       http:
         paths:
           - backend:
               serviceName: wxh5
               servicePort: 80
             path: /
-    - host: console.{{ domain }}
+    - host: "console.{{ domain }}"
       http:
         paths:
           - backend:
               serviceName: console
               servicePort: 80
             path: /
-    - host: api.{{ domain }}
+    - host: "{{ domain }}"
       http:
         paths:
           - backend:
               serviceName: core
               servicePort: 80
             path: "{{ core_path }}" # 应改成 core或者某个具体的服务名
-  # tls:
-  #   - hosts:
-  #       - "{{ domain }}"
-  #       - "*.{{ domain }}"
-  #     secretName: "{{ domain }}"
+  tls:
+    - hosts:
+        - "{{ domain }}"
+        - "www.{{ domain }}"
+        - "console.{{ domain }}"
+      secretName: "{{ domain }}"
